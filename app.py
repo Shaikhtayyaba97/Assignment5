@@ -225,7 +225,7 @@ elif choice == "Retrieve Data":
 
                             if st.session_state.failed_attempts >= 3:
                                 st.session_state.lockout_time = time.time()
-                                st.error("🔒 Too many failed attempts! Please wait before trying again.")
+                                st.error("🔒 Too many Failed attempts! Please wait before trying again.")
 
 elif choice == "Logout":
     st.session_state.current_user = None
