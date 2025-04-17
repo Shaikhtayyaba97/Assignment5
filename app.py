@@ -12,24 +12,24 @@ import os
 
 st.set_page_config(page_title="🛡️ Secure Data Encryption", layout="centered")
 
-# ------------------- CSS -------------------
+# ------------------- Theme Compatible CSS -------------------
 st.markdown("""
     <style>
-    html, body, [class*="css"]  {
+    html, body, [class*="css"] {
         font-family: 'Segoe UI', sans-serif;
-        background-color: #f0f2f6;
     }
+
     .title {
         font-size: 38px;
-        color: #2d3436;
         font-weight: 700;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
+
     .subtitle {
         font-size: 20px;
-        color: #636e72;
         margin-bottom: 25px;
     }
+
     .stButton>button {
         background-color: #0984e3;
         color: white;
@@ -40,21 +40,39 @@ st.markdown("""
         padding: 10px 20px;
         transition: background-color 0.3s ease;
     }
+
     .stButton>button:hover {
         background-color: #74b9ff;
         color: black;
     }
+
     .card {
-        background-color: white;
         padding: 30px 25px;
         border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
         margin-bottom: 25px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     }
-    .stTextInput>div>div>input {
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 6px;
+
+    /* Light Theme */
+    @media (prefers-color-scheme: light) {
+        .card {
+            background-color: #ffffff;
+            color: #2d3436;
+        }
+        .title, .subtitle {
+            color: #2d3436;
+        }
+    }
+
+    /* Dark Theme */
+    @media (prefers-color-scheme: dark) {
+        .card {
+            background-color: #2c2c2e;
+            color: #f1f2f6;
+        }
+        .title, .subtitle {
+            color: #f1f2f6;
+        }
     }
     </style>
 """, unsafe_allow_html=True)
